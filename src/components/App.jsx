@@ -1,6 +1,6 @@
 import React from 'react';
 
-import TestFile from "./TestFile"
+import TestFile from "./Search"
 import ImageGallery from './ImageGallery';
 
 import Loader from './Loader';
