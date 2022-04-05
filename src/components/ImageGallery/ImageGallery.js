@@ -5,6 +5,8 @@ import Loader from '../Loader';
 import ImageGalleryItem from '../ImageGalleryItem';
 import Button from '../Button';
 
+import s from './ImageGallery.module.css';
+
 const Status = {
   IDLE: 'idle',
   PENDING: 'pending',
@@ -65,7 +67,7 @@ class ImageGallery extends React.Component {
     const { images, status } = this.state;
 
     if (status === 'idle' || status === 'rejected') {
-      return <ul className="gallery"></ul>;
+      return <ul className={s.gallery}></ul>;
     }
 
     if (status === 'pending') {
@@ -75,7 +77,7 @@ class ImageGallery extends React.Component {
     if (status === 'resolved') {
       return (
         <>
-          <ul className="gallery">
+          <ul className={s.gallery}>
             {images.map(image => (
               <ImageGalleryItem
                 onClick={this.handleImageClick}

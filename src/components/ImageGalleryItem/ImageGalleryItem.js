@@ -1,10 +1,11 @@
 import React from 'react';
+import s from './ImageGalleryItem.module.css';
 
 function ImageGalleryItem({ imageURL, largeImage, name, onClick }) {
   return (
-    <li className="gallery-item" onClick={onClick}>
+    <li className={s.galleryItem} onClick={onClick}>
       <img
-        className="itemImage"
+        className={s.itemImage}
         src={imageURL}
         lowsrc={largeImage}
         alt={name}
