@@ -1,6 +1,7 @@
 import React from 'react';
-import { fetchImages } from '../../services/PixabayApi';
+import PropTypes from 'prop-types';
 
+import { fetchImages } from '../../services/PixabayApi';
 import Loader from '../Loader';
 import ImageGalleryItem from '../ImageGalleryItem';
 import Button from '../Button';
@@ -96,3 +97,8 @@ class ImageGallery extends React.Component {
 }
 
 export default ImageGallery;
+
+ImageGallery.propTypes = {
+  handleModal: PropTypes.func.isRequired,
+  imageName: PropTypes.string.isRequired,
+};

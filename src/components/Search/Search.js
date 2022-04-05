@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ReactComponent as SearchIcon } from '../images/search.svg';
 
 import s from './Search.module.css';
@@ -45,3 +46,7 @@ class Search extends React.Component {
 }
 
 export default Search;
+
+Search.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
