@@ -3,20 +3,57 @@ import React from 'react';
 import Search from "./Search"
 import ImageGallery from './ImageGallery';
 
-import Loader from './Loader';
+// import Loader from './Loader';
+
+class App extends React.Component {
+  state = {
+    imageName: '',
+    showModal: false,
+    stateURL: '',
+  };
+
+  handleFormSubmit = query => {
+    this.setState({ imageName: query });
+  };
+
+  toggleModal = url => {
+    this.setState(({ showModal }) => ({
+      stateURL: url,
+      showModal: !showModal,
+    }));
+  };
+
+  render() {
+    const { imageName
+      // , showModal, stateURL
+    } = this.state;
+
+    return (
+      <div className="App">
+        <Search onSubmit={this.handleFormSubmit} />
+        <ImageGallery imageName={imageName} handleModal={this.toggleModal} />
+        {/* {showModal && <Modal onClose={this.toggleModal} imageURL={stateURL} />} */}
+        
+      </div>
+    );
+  }
+}
+export default App
 
 
 
-export const App = () => {
-  return (
-    <>
-        <Search/>
-      <ImageGallery/>
-      <Loader />
+
+
+// export const App = () => {
+//   return (
+//     <>
+//         <Search  onSubmit={this.handleFormSubmit}/>
+//       <ImageGallery/>
+//       <Loader />
       
     
-    </>
+//     </>
     
     
-  );
-};
+//   );
+// };
