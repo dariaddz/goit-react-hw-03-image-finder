@@ -2,8 +2,8 @@ import React from 'react';
 
 import Search from "./Search"
 import ImageGallery from './ImageGallery';
+import Modal from './Modal';
 
-// import Loader from './Loader';
 
 class App extends React.Component {
   state = {
@@ -25,35 +25,17 @@ class App extends React.Component {
 
   render() {
     const { imageName
-      // , showModal, stateURL
+      , showModal, stateURL
     } = this.state;
 
     return (
       <div className="App">
         <Search onSubmit={this.handleFormSubmit} />
         <ImageGallery imageName={imageName} handleModal={this.toggleModal} />
-        {/* {showModal && <Modal onClose={this.toggleModal} imageURL={stateURL} />} */}
+        {showModal && <Modal onClose={this.toggleModal} imageURL={stateURL} />}
         
       </div>
     );
   }
 }
 export default App
-
-
-
-
-
-// export const App = () => {
-//   return (
-//     <>
-//         <Search  onSubmit={this.handleFormSubmit}/>
-//       <ImageGallery/>
-//       <Loader />
-      
-    
-//     </>
-    
-    
-//   );
-// };
