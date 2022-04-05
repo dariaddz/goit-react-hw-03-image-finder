@@ -1,4 +1,6 @@
 import React from 'react';
+import { ReactComponent as SearchIcon } from '../images/search.svg';
+
 import s from './Search.module.css';
 
 class Search extends React.Component {
@@ -24,7 +26,7 @@ class Search extends React.Component {
       <header className={s.Searchbar}>
         <form className={s.SearchForm} onSubmit={this.handleSubmit}>
           <button type="submit" className={s.SearchFormButton}>
-            <span className={s.SearchFormButtonLabel}>Search</span>
+            <SearchIcon width="20" height="20" />
           </button>
 
           <input
