@@ -11,4 +11,4 @@ function fetchImages(nextName, currentPage) {
     .then(response => response.data.hits);
 }
 
-export default { fetchImages };
+export { fetchImages };

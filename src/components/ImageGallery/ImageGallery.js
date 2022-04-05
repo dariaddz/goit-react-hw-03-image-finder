@@ -1,5 +1,5 @@
 import React from 'react';
-import PixabayApi from '../../services/PixabayApi';
+import { fetchImages } from '../../services/PixabayApi';
 
 import Loader from '../Loader';
 import ImageGalleryItem from '../ImageGalleryItem';
@@ -41,7 +41,7 @@ class ImageGallery extends React.Component {
   }
 
   getImages = (nextName, currentPage) => {
-    PixabayApi.fetchImages(nextName, currentPage).then(images => {
+    fetchImages(nextName, currentPage).then(images => {
       if (images.length === 0) {
         alert('Ничего не найдено');
         this.setState({ status: Status.REJECTED });
