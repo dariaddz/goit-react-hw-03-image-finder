@@ -3,7 +3,7 @@ import React from 'react';
 import Search from "./Search"
 import ImageGallery from './ImageGallery';
 import Modal from './Modal';
-
+// import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 class App extends React.Component {
   state = {
@@ -24,9 +24,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { imageName
-      , showModal, stateURL
-    } = this.state;
+    const { imageName, showModal, stateURL} = this.state;
 
     return (
       <div className="App">

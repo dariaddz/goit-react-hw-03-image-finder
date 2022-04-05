@@ -1,5 +1,6 @@
 import React from 'react';
 import PixabayApi from '../../services/PixabayApi';
+
 import Loader from '../Loader';
 import ImageGalleryItem from '../ImageGalleryItem';
 import Button from '../Button';
@@ -33,7 +34,6 @@ class ImageGallery extends React.Component {
         },
         () => this.getImages(nextName, 1)
       );
-      console.log('prevName !== nextName');
     }
     if (prevPage < currentPage) {
       this.getImages(nextName, currentPage);
@@ -61,15 +61,6 @@ class ImageGallery extends React.Component {
     this.props.handleModal(event.target.lowsrc);
   };
 
-  // render() {
-  //   return (
-  //     <div>
-  //       Это Галлерея
-  //       <ImageGalleryItem />
-  //       <Button />
-  //     </div>
-  //   );
-  // }
   render() {
     const { images, status } = this.state;
 
