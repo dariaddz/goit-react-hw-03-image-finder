@@ -1,4 +1,5 @@
 import React from 'react';
+import s from './Search.module.css';
 
 class Search extends React.Component {
   state = {
@@ -20,15 +21,15 @@ class Search extends React.Component {
 
   render() {
     return (
-      <header className="Searchbar">
-        <form className="SearchForm" onSubmit={this.handleSubmit}>
-          <button type="submit" className="SearchForm-button">
-            <span className="SearchForm-button-label">Search</span>
+      <header className={s.Searchbar}>
+        <form className={s.SearchForm} onSubmit={this.handleSubmit}>
+          <button type="submit" className={s.SearchFormButton}>
+            <span className={s.SearchFormButtonLabel}>Search</span>
           </button>
 
           <input
             onChange={this.handleChange}
-            className="SearchForm-input"
+            className={s.SearchFormInput}
             type="text"
             value={this.state.query}
             autoComplete="off"
