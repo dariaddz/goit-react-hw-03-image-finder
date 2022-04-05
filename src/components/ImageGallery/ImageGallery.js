@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageGalleryItem from '../ImageGalleryItem';
+import Button from '../Button';
 
 class ImageGallery extends React.Component {
   render() {
@@ -7,6 +8,7 @@ class ImageGallery extends React.Component {
       <div>
         Это Галлерея
         <ImageGalleryItem />
+        <Button />
       </div>
     );
   }

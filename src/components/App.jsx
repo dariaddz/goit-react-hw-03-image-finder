@@ -6,12 +6,16 @@ import ImageGallery from './ImageGallery';
 import Loader from './Loader';
 
 
+
 export const App = () => {
   return (
     <>
         <Search/>
       <ImageGallery/>
-    <Loader/></>
+      <Loader />
+      
+    
+    </>
     
     
   );
