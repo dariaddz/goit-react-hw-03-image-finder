@@ -3,7 +3,8 @@ import React from 'react';
 import Search from "./Search"
 import ImageGallery from './ImageGallery';
 import Modal from './Modal';
-// import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import s from "./App.module.css"
+
 
 class App extends React.Component {
   state = {
@@ -27,7 +28,7 @@ class App extends React.Component {
     const { imageName, showModal, stateURL} = this.state;
 
     return (
-      <div className="App">
+      <div className={s.App}>
         <Search onSubmit={this.handleFormSubmit} />
         <ImageGallery imageName={imageName} handleModal={this.toggleModal} />
         {showModal && <Modal onClose={this.toggleModal} imageURL={stateURL} />}
